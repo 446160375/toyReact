@@ -2,12 +2,14 @@
 A simple toy react
 
 ### 项目启动
-先进入step1\step2\step3
+```
+先进入step1 或 step2 或 step3
 npm install
 npm run dev
+```
 
 ### 项目概括
-按照老师视频的流程 每个文件夹 是老师课程的代码
+按照老师视频的流程 每个文件夹 是每节课程的代码
 
 ### 组件化——环境搭建
 ***
@@ -29,23 +31,47 @@ npm install webpack-dev-server --save-dev
 将以下代码添加到新增的 webpack.config.js 文件中。
 ```
 module.exports = {
-    entry: './main.js',
+    entry: "./index.js",
     module: {
-        rules: [{
-            test: /\.js$/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env'],
-                    plugins: [['@babel/plugin-transform-react-jsx', { pragma: 'createElement'}]]
-                }
-            }
-        }]
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"],
+                        plugins: [
+                            [
+                                "@babel/plugin-transform-react-jsx",
+                                { pragma: "createElement" },
+                            ],
+                        ],
+                    },
+                },
+            },
+        ],
     },
-    mode: 'development',
+    mode: "development",
     optimization: {
-        minimize: false
-    }
+        minimize: false,
+    },
+    devServer: {
+        hot: true,
+        port: "8097",
+        inline: true,
+        open: true,
+        overlay: true,
+        proxy: {
+            "/api": {
+                target: "",
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/api": "",
+                },
+            },
+        },
+    },
 };
 ```
 按照这样，我们就可以在代码中使用 JSX 语法了。 运行命令 npx webpack-dev-server / npx webpack
