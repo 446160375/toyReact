@@ -1,7 +1,7 @@
 // const path = require("path");
 
 module.exports = {
-    entry: "./index.js",
+    entry: "./main.js",
     module: {
         rules: [
             {
@@ -14,7 +14,7 @@ module.exports = {
                         plugins: [
                             [
                                 "@babel/plugin-transform-react-jsx",
-                                { pragma: "createElement" },
+                                { pragma: "ToyReact.createElement" },
                             ],
                         ],
                     },
