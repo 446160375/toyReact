@@ -1,6 +1,25 @@
 # toyReact
 A simple toy react
 
+### 创建gitignore文件
+创建git项目的时候忘记创建gitignore文件了，然后会有很多本地的idea配置上传到云上
+
+为了避免需要创建一个gitignore文件
+```
+在项目的文件目录下右键Git Bush Here
+输入touch .gitignore
+
+如果之前已经上传了文件如何删除 git rm -r --cached .idea
+
+.gitignore 文件可添加以下忽略内容
+dist/
+dist/*
+node_modules/
+package-lock.json
+.vscode
+
+```
+
 ### 项目启动
 ```
 先进入step1 或 step2 或 step3
