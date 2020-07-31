@@ -102,3 +102,12 @@ React.createElement(
     在我们的课程中，在update()，也就是在更新元素的阶段，会先生成一个改变之后的DOM结构，然后对DOM树的type，props，chirdren等地方进行了对比，从而实现对整个DOM树的局部更新。
 
     好的，希望的我分享能带你再一次回顾我们三天的课程。也希望大家能够有收获。
+
+### 相关学习链接
+[React.js 性能分析](https://www.infoq.cn/article/8T9M7dtzqWNsSFfXMgSb)
+
+[为 React 开发人员推荐 8 个测试工具、库和框架](https://www.infoq.cn/article/AtB2saQ6eodMr06tYaf7)
+
+[你不知道的 virtual DOM 1](https://www.infoq.cn/article/2iviqjklwa4JkF0YNQGZ)
+
+[你不知道的 virtual DOM 2](https://www.infoq.cn/article/AiQMbjI0oXZ1UrueiBze)
